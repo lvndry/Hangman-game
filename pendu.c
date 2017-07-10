@@ -162,7 +162,7 @@ void intro(){
 
 	struct timespec req, rem;
 	req.tv_sec = 0;
-	req.tv_nsec = 5000;
+	req.tv_nsec = 500;
 	rem.tv_sec = 0;
 	rem.tv_nsec = 50;
 
@@ -196,7 +196,6 @@ void letterFound(player *player, char guess, int len, int langue){
 		}
 
 		//player->life-=1;
-
 }
 
 int level(int langue){
