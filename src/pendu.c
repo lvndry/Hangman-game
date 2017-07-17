@@ -269,8 +269,9 @@ void multiplayer(int langue){ //Launch multiplayer game
 		if(langue == 1) printf("%s: Tapez une lettre : ",playerpt1->name);
 		else printf("%s : Press a letter : ", playerpt1->name);
 
-		getchar();
 		scanf("%c", &guess);
+		getchar();
+		
 		
 		letterFound(playerpt1, guess, len1, langue);
 		
@@ -295,9 +296,9 @@ void multiplayer(int langue){ //Launch multiplayer game
 		if(langue == 1) printf("%s: Tapez une lettre : ",playerpt2->name);
 		else printf("%s : Press a letter : ", playerpt2->name);
 
-		getchar();
 		scanf("%c", &guess);
-
+		getchar();
+		
 		letterFound(playerpt2, guess, len2, langue);
 		printf("%s\n", playerpt2->playerWord);
 
@@ -308,7 +309,7 @@ void multiplayer(int langue){ //Launch multiplayer game
 		hangman(playerpt2->error);
 
 		printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-
+		//getchar();
 	}while( ( (playerpt1->error < 8) || (playerpt2->error < 8) ) && ((win1 != 1) || (win2 != 1)) );
 
 	if(win1){ //-> if(win1 == 1)
@@ -399,6 +400,7 @@ void soloen(){ //Launch game in english
 
 		if(life <= 5){
 			printf("Do you need help ? Press 'O' for a clue (You'll lost a life) : ");
+			//getchar();
 			scanf("%c", &indice);
 			getchar();
 			if(toupper(indice) == 'O'){
@@ -408,9 +410,10 @@ void soloen(){ //Launch game in english
 		}
 
 		printf("Press a letter: ");
+		//getchar();
 		scanf("%c", &guess);
 		getchar();
-			
+	
 		for(int i = 0; i < len; i++){
 			if(guess == wordtoguess[i]){
 				userword[i] = guess;
