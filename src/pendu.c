@@ -142,6 +142,8 @@ void indice(player *gamer, int langue){ //Return a letter that has not been foun
 		if(toupper(indice) == 'O'){
 			if(langue == 1) printf("La lettre %c est dans le mot\n", getLetter(gamer->playerWord, gamer->wordtoguess));
 			else printf(" %c appears is in the word\n", getLetter(gamer->playerWord, gamer->wordtoguess));
+
+			hangman(++(gamer->error));
 		}
 	}
 }
@@ -195,7 +197,7 @@ void letterFound(player *gamer, char guess, int len, int langue){ //Check if pla
 	if(count > 0) {
 		if(langue == 1)
 			printf("La lettre %c est presente %d fois dans le mot\n", guess, count);
-		else printf("Letter %c is %d int the word\n", guess, count);
+		else printf("Letter %c is %d times in the word\n", guess, count);
 	}
 
 	else {
@@ -246,19 +248,26 @@ void multiplayer(int langue){ //Launch multiplayer game
 	char guess;
  	
  	printf("\n");
- 	printf("Joueur 1 : \n");
+ 	if(langue == 1)
+ 		printf("Joueur 1 : \n");
+ 	else printf("Player 1 : \n");
  	int len1 = playerInit(playerpt1, langue);
  	printf("\n");
- 	printf("Joueur 2 :\n");
+ 	if(langue == 1)
+ 		printf("Joueur 2 : \n");
+ 	else printf("Player 2 : \n");
  	int len2 = playerInit(playerpt2, langue);
 
 	do{
+
+		if(langue == 1) printf("Il vous reste %d chances\n", 8-playerpt1->error);
+		else printf("You have %d chances left\n", 8-playerpt1->error);
 		indice(playerpt1, langue);
 		printf("\n");
 		printf("%s\n", playerpt1->playerWord);
 
-		if(langue == 1) printf("Joueur 1 : Tapez une lettre : ");
-		else printf("player1 : Press a letter : ");
+		if(langue == 1) printf("%s: Tapez une lettre : ",playerpt1->name);
+		else printf("%s : Press a letter : ", playerpt1->name);
 
 		getchar();
 		scanf("%c", &guess);
@@ -268,41 +277,57 @@ void multiplayer(int langue){ //Launch multiplayer game
 		printf("%s\n", playerpt1->playerWord);
 		win1 = check (playerpt1->playerWord, playerpt1->wordtoguess);
 		
+		if(win1)
+			break;
+
 		hangman(playerpt1->error);
 
 		printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+
+		if(langue == 1) printf("Il vous reste %d chances\n", 8-playerpt2->error);
+		else printf("You have %d chances left\n", 8-playerpt2->error);
 
 		indice(playerpt2, langue);
 		printf("\n");
 		printf("%s\n", playerpt2->playerWord);
 
-		if(langue == 1) printf("Joueur 2 : Tapez une lettre : ");
-		else printf("Player 2 : Press a letter  : ");
+		
+		if(langue == 1) printf("%s: Tapez une lettre : ",playerpt2->name);
+		else printf("%s : Press a letter : ", playerpt2->name);
 
 		getchar();
 		scanf("%c", &guess);
-		
+
 		letterFound(playerpt2, guess, len2, langue);
 		printf("%s\n", playerpt2->playerWord);
 
-		if(langue == 1) printf("Il vous reste %d chances\n", 8-playerpt2->error);
-		else printf("You have %d chances left\n", 8-playerpt2->error);
-
 		win2 = check(playerpt2->playerWord, playerpt2->wordtoguess);
 		
+		if(win2)
+			break;
 		hangman(playerpt2->error);
 
 		printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 
-	}while(playerpt1->error < 8 && playerpt2->error < 8 && win1 == 0 && win2 == 0);
+	}while( ( (playerpt1->error < 8) || (playerpt2->error < 8) ) && ((win1 != 1) || (win2 != 1)) );
 
-	if(win1)
-		printf("Bravo %s tu as gagne!!\n", playerpt1->name);
-	if(win2)
-		printf("Bravo %s tu as gagne!!\n", playerpt2->name);
-	else 
-		printf("Vous avez tous les 2 perdus ?? :(\nC'etait pas si dur pourtant je pensais aux mot %s pour %s et au mot %s pour %s!\n", 
+	if(win1){ //-> if(win1 == 1)
+		if(langue == 1)
+			printf("Bravo %s tu as gagne!!\n", playerpt1->name);
+		else printf("Congrats %s you win!\n", playerpt1->name);
+	}
+	if(win2){ //-> if(win2 == 1)
+		if(langue == 1)
+			printf("Bravo %s tu as gagne!!\n", playerpt2->name);
+		else printf("Congrats %s you won!\n", playerpt2->name);
+	}
+	else{
+		if(langue == 1)
+			printf("Vous avez tous les 2 perdus !! :(\nC'etait pas si dur pourtant je pensais aux mot %s pour %s et au mot %s pour %s!\n", 
 			    playerpt1->wordtoguess, playerpt1->name, playerpt2->wordtoguess, playerpt2->name);
+		else printf("You both lost !! :(\nIt wasn't that hard I was thinking about %s for %s and %s for %s!\n", 
+			    playerpt1->wordtoguess, playerpt1->name, playerpt2->wordtoguess, playerpt2->name);
+	}
 
 	printf("\n\n\n");
 	printf("Vous voulez recommencer ?\n");
@@ -356,7 +381,7 @@ void soloen(){ //Launch game in english
 
 	printf("The word has a score value of %d points\n", wordValue(wordtoguess));
 		
-	printf("Rules : You have to guess what word I'm thinking about..Easy right ?\nYou've only 10 chances to find the word");
+	printf("Rules : You have to guess what word I'm thinking about..Easy right ?\nYou've only have right to 8 errors to find the word");
 	printf("Challenge accepted ?\nWell let me choose a word...\n");
 	sleep(2);
 	printf("I got it!\n\n");
@@ -376,9 +401,10 @@ void soloen(){ //Launch game in english
 			printf("Do you need help ? Press 'O' for a clue (You'll lost a life) : ");
 			scanf("%c", &indice);
 			getchar();
-			if(toupper(indice) == 'O')
+			if(toupper(indice) == 'O'){
 				printf(" %c appears is in the word\n", getLetter(userword, wordtoguess));
 				hangman(++error);
+			}
 		}
 
 		printf("Press a letter: ");
@@ -431,7 +457,7 @@ void solofr(){ //Launch game in french
 
 	printf("Le mot a une valeur de %d\n", wordValue(wordtoguess));
 		
-	printf("Regles : Vous devez devnier le mot auquelle je pense..Voila C'est simple non ?\nSi apres 10 coups vous n'y etes arrive pas vous avez perdu\n");
+	printf("Regles : Vous devez devnier le mot auquelle je pense..Voila C'est simple non ?\nSi apres 8 erreurs vous n'y etes arrive pas vous avez perdu\n");
 	printf("Challenge accepte ?\nD'accord laisse moi reflechir a un mot...\n");
 	sleep(2);
 	printf("C'est bon j'ai une bonne idee!\n\n");

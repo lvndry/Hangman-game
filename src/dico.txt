@@ -43,8 +43,8 @@ aberration
 abetir
 abhorrer
 abidjan
-abîme
-abîmer
+abime
+abimer
 abject
 abjection
 abjurer
@@ -238,7 +238,7 @@ accoucheuse
 accroche
 accrocher
 accroissement
-accroître
+accroitre
 accru
 accrue
 accrues
@@ -589,7 +589,7 @@ agi
 agile
 agilite
 agir
-agir en maître
+agir en maitre
 agissant
 agissement
 agissements
@@ -691,9 +691,9 @@ aimer
 aimeraient
 aimerait
 ain
-aîne
-aînee
-aînes
+aine
+ainee
+aines
 ainsi
 air
 airains
@@ -1330,8 +1330,8 @@ apotheose
 apôtre
 apparaissait
 apparaissent
-apparaît
-apparaître
+apparait
+apparaitre
 appareil
 appareil photo
 appareillage
@@ -2596,7 +2596,7 @@ beninois
 beninoise
 benir
 benjamin
-benoît
+benoit
 bentonite
 benz
 bercail
@@ -2839,7 +2839,7 @@ bois
 boisson
 boissons
 boite
-boîte
+boite
 boiter
 boites
 boiteux
@@ -3783,9 +3783,9 @@ chagriner
 chagrins
 chah
 chaillot
-chaîne
-chaînes
-chaînon
+chaine
+chaines
+chainon
 chair
 chaire
 chairs
@@ -4304,8 +4304,8 @@ cloche
 clocher
 clochette
 cloison
-cloître
-cloîtrer
+cloitre
+cloitrer
 clope
 cloque
 clore
@@ -4571,7 +4571,7 @@ comparable
 comparables
 comparaison
 comparaisons
-comparaître
+comparaitre
 comparatif
 comparativement
 compare
@@ -4931,9 +4931,9 @@ connaissent
 connaisseur
 connaisseuse
 connaissons
-connaît
-connaîtra
-connaître
+connait
+connaitra
+connaitre
 connard
 connasse
 connaught
@@ -5718,7 +5718,7 @@ croissance
 croissant
 croissante
 croit
-croître
+croitre
 croix
 croquer
 croquette
@@ -5936,7 +5936,7 @@ debitrice
 deblocage
 debloquer
 deboires
-deboîter
+deboiter
 debonnaire
 deborde
 debordement
@@ -5993,8 +5993,8 @@ decerner
 deces
 decevant
 decevoir
-dechaînement
-dechaîner
+dechainement
+dechainer
 decharge
 decharger
 decharne
@@ -6106,7 +6106,7 @@ decrier
 decrire
 decrit
 decrocher
-decroître
+decroitre
 deçu
 deçue
 deçus
@@ -6190,7 +6190,7 @@ deflorer
 defoncer
 deforme
 deformer
-defraîchir
+defraichir
 defunt
 defunte
 degage
@@ -6981,8 +6981,8 @@ diminutif
 diminution
 dimitri
 dimitrov
-dîner
-dîners
+diner
+diners
 dingue
 dinitrile
 diocese
@@ -7073,8 +7073,8 @@ disgrace
 disney
 disons
 disparaissent
-disparaît
-disparaître
+disparait
+disparaitre
 disparite
 disparites
 disparition
@@ -8010,7 +8010,7 @@ enceintes
 encensement
 encerclement
 encercler
-enchaîne
+enchaine
 enchante
 enchante de
 enchantement
@@ -8225,16 +8225,16 @@ entracte
 entraide
 entrailles
 entrain
-entraînant
-entraîne
-entraîne
-entraînee
-entraînement
-entraîner
-entraînera
-entraînerait
-entraîneur
-entraîneuse
+entrainant
+entraine
+entraine
+entrainee
+entrainement
+entrainer
+entrainera
+entrainerait
+entraineur
+entraineuse
 entrant
 entrave
 entraver
@@ -8360,7 +8360,7 @@ episodes
 episodique
 epistolaire
 epithelium
-epître
+epitre
 eplucher
 epointe
 eponge
@@ -9118,7 +9118,7 @@ faisceau
 faisons
 fait
 faite
-faîte
+faite
 faites
 faits
 faits divers
@@ -9792,11 +9792,11 @@ fragmentaire
 fragments
 fragrance
 frai
-fraîche
-fraîche date
-fraîchement
-fraîches
-fraîcheur
+fraiche
+fraiche date
+fraichement
+fraiches
+fraicheur
 frais
 fraise
 fraiser
@@ -10970,8 +10970,8 @@ huissiers
 huit
 huit cents
 huitieme
-huître
-huîtres
+huitre
+huitres
 hulotte
 hululer
 humain
@@ -11077,8 +11077,8 @@ ignore
 ignorent
 ignorer
 il
-île
-îles
+ile
+iles
 iliescu
 illegal
 illegale
@@ -13243,13 +13243,13 @@ maïs
 maison
 maisonnee
 maisons
-maître
-maîtres
-maîtresse
-maîtrise
-maîtrise
-maîtrisee
-maîtriser
+maitre
+maitres
+maitresse
+maitrise
+maitrise
+maitrisee
+maitriser
 majeste
 majestueux
 majeur
@@ -13632,7 +13632,7 @@ mechant
 mechants
 meche
 meconnaissance
-meconnaître
+meconnaitre
 meconnu
 meconnus
 mecontent
@@ -14470,8 +14470,8 @@ naissance
 naissances
 naisse
 naissent
-naît
-naître
+nait
+naitre
 naïvete
 nakhitchevan
 nallet
@@ -14673,7 +14673,7 @@ nigel
 niger
 nil
 nimber
-nîmes
+nimes
 nina
 nipper
 nippes
@@ -15452,8 +15452,8 @@ paraissait
 paraisse
 paraissent
 parait
-paraît
-paraître
+parait
+paraitre
 parallele
 parallelement
 paralleles
@@ -16929,7 +16929,7 @@ presidium
 presomption
 presomptueux
 presque
-presqu'île
+presqu'ile
 pressant
 presse
 presse
@@ -17673,7 +17673,7 @@ raffine
 raffinement
 raffines
 raffut
-rafraîchir
+rafraichir
 rafsandjani
 ragaillardir
 rage
@@ -18018,8 +18018,8 @@ reconnaissait
 reconnaissance
 reconnaissant
 reconnaissent
-reconnaît
-reconnaître
+reconnait
+reconnaitre
 reconnu
 reconnue
 reconnues
@@ -18423,7 +18423,7 @@ remunerer
 remuneres
 remy
 renaissance
-renaître
+renaitre
 renard
 renaude
 renault
@@ -20727,7 +20727,7 @@ surchauffe
 surchauffer
 surclasser
 surcoût
-surcroît
+surcroit
 surdite
 sûre
 sûrement
@@ -20787,7 +20787,7 @@ survenus
 survetement
 survie
 survient
-survît
+survit
 survivant
 survivants
 survivre
@@ -21525,10 +21525,10 @@ trahi
 trahir
 trahison
 train
-traîne
-traînee
-traînent
-traîner
+traine
+trainee
+trainent
+trainer
 trains
 traire
 trait
@@ -21544,10 +21544,10 @@ traitements
 traitent
 traiter
 traites
-traître
-traîtres
-traîtresse
-traîtrise
+traitre
+traitres
+traitresse
+traitrise
 traits
 trajet
 tram
