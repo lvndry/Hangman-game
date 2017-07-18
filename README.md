@@ -30,7 +30,7 @@
     ![Alt Text](screenshots/noindice.png?raw=true "Just press an other key if you don't want one")
     
  - Once you have finished you can replay by pressing Enter or quit by pressing q
-   ![Alt Text](screenshots/re^play.png?raw=true "When finished press Enter to replay, q to quit")
+   ![Alt Text](screenshots/replay.png?raw=true "When finished press Enter to replay, q to quit")
  
  - You can also choose duo mode, nothing changes but here this is the first to guess his word that wins
     ![Alt Text](screenshots/multiplayer.png?raw=true "Duo mode")
