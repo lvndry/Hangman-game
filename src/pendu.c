@@ -15,7 +15,7 @@ int check(char *userword, char* wordtoguess){ //If userword == wordtogues return
 }
 
 //@Todo : Find an englsih dico
-char* chooseWord(int level){ //returns a random in dico depending on the level
+char* chooseWord(int level){ //returns a random word from dico depending on the level
 	FILE* words;
 
 	char *word = malloc(20*sizeof(char));
@@ -136,9 +136,10 @@ void indice(player *gamer, int langue){ //Return a letter that has not been foun
 		if(langue == 1) printf("Vous voulez un indice ? Appuyez '0' pour un indice\n");
 		else printf("Do you need help ? Press 'O' for a clue : ");
 		
-		getchar();
-		scanf("%c", &indice);
 		
+		scanf("%c", &indice);
+		getchar();
+
 		if(toupper(indice) == 'O'){
 			if(langue == 1) printf("La lettre %c est dans le mot\n", getLetter(gamer->playerWord, gamer->wordtoguess));
 			else printf(" %c appears is in the word\n", getLetter(gamer->playerWord, gamer->wordtoguess));
@@ -257,7 +258,7 @@ void multiplayer(int langue){ //Launch multiplayer game
  		printf("Joueur 2 : \n");
  	else printf("Player 2 : \n");
  	int len2 = playerInit(playerpt2, langue);
-
+ 	getchar();
 	do{
 
 		if(langue == 1) printf("Il vous reste %d chances\n", 8-playerpt1->error);
@@ -270,9 +271,9 @@ void multiplayer(int langue){ //Launch multiplayer game
 		else printf("%s : Press a letter : ", playerpt1->name);
 
 		scanf("%c", &guess);
+		//printf("guess : %c\n", guess);
 		getchar();
-		
-		
+		//printf("guess : %c\n", guess);
 		letterFound(playerpt1, guess, len1, langue);
 		
 		printf("%s\n", playerpt1->playerWord);
@@ -297,8 +298,9 @@ void multiplayer(int langue){ //Launch multiplayer game
 		else printf("%s : Press a letter : ", playerpt2->name);
 
 		scanf("%c", &guess);
+		//printf("guess : %c\n", guess);
 		getchar();
-		
+		//printf("guess : %c\n", guess);
 		letterFound(playerpt2, guess, len2, langue);
 		printf("%s\n", playerpt2->playerWord);
 
@@ -310,7 +312,7 @@ void multiplayer(int langue){ //Launch multiplayer game
 
 		printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 		//getchar();
-	}while( ( (playerpt1->error < 8) || (playerpt2->error < 8) ) && ((win1 != 1) || (win2 != 1)) );
+	}while( ( (playerpt1->error < 8) && (playerpt2->error < 8) ) && ((win1 != 1) && (win2 != 1)) );
 
 	if(win1){ //-> if(win1 == 1)
 		if(langue == 1)
@@ -331,8 +333,12 @@ void multiplayer(int langue){ //Launch multiplayer game
 	}
 
 	printf("\n\n\n");
-	printf("Vous voulez recommencer ?\n");
-	printf("Appuie sur Entrer pour rejouer et sur q pour quitter\n");
+	if(langue == 1){
+		printf("Vous voulez recommencer ?\nAppuiez sur Entrer pour rejouer et sur q pour quitter\n");
+	}
+	else{
+		printf("Want to replay ?\nPress Enter to replat or 'q' to quit");
+	}
 }
 
 int playerInit(player *user, int langue){ //Init players in duo mode
@@ -427,7 +433,6 @@ void soloen(){ //Launch game in english
 		else {
 			printf(" %c is not in the word\n", guess);
 			error++;
-			life--;
 		}
 
 		hangman(error);
@@ -436,7 +441,7 @@ void soloen(){ //Launch game in english
 		
 		printf("%s\n", userword);
 
-		printf("You have %d chances left\n\n", life);
+		printf("You have %d chances left\n\n", 8-error);
 
 	}while(error < 8 && win == 0);
 
@@ -456,7 +461,7 @@ void solofr(){ //Launch game in french
 	char *userword = malloc(len*sizeof(char));
 
 	char indice, guess;
-	int count = 0, win, life = 8, error = 0;
+	int count = 0, win, error = 0;
 
 	printf("Le mot a une valeur de %d\n", wordValue(wordtoguess));
 		
@@ -476,7 +481,7 @@ void solofr(){ //Launch game in french
 	do{
 		count = 0;
 
-		if(life <= 4){
+		if(error >= 4){
 			printf("Voulez vous un indice ? Tapez O pour un indice : (Cela vous fera perdre une vie) : ");
 			scanf("%c", &indice);
 			getchar();
@@ -503,7 +508,6 @@ void solofr(){ //Launch game in french
 		else {
 			printf("La lettre %c n'est pas dans le mot\n", guess); 
 			error++;
-			life--;
 		}
 
 		hangman(error);

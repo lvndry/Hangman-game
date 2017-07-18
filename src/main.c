@@ -31,7 +31,8 @@ int main(int argc, char const *argv[])
 		CLEAR
 
 		intro();
-
+		printf("\n\n\n");
+		
 		srand(time(NULL));
 
 		printf("====== Jeu du pendu =======\n");
